@@ -1,32 +1,18 @@
-// El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
-let listaAmigos = [];
-let mostrarAmigos = document.getElementById("listaAmigos");
+
+let amigos = [];
 
 function agregarAmigo() {
-    // dato ingresado
-    let nombreIngresado = document.querySelector("input").value;
-    // si el dato ingresado es vacío, mostrar alerta
-    if (nombreIngresado === '') {
-        alert("Por favor, ingrese un nombre");
+    // Captura el valor de entrada
+    let input = document.getElementById("amigo");
+    let nombreAmigo = input.value.trim();
+
+    //Validar que el campo no esté vacío y agregar a la lista de amigos
+    if (nombreAmigo === '') {
+        alert("Por favor, inserte un nombre.");
     } else {
-        // agregar el dato a la lista
-        listaAmigos.push(nombreIngresado);
-        return document.querySelector("input").value = '';
+        amigos.push(nombreAmigo);
+        //limpiar el campo de entrada
+        input.innerHTML = '';
     }
-}
-function mostrarLista() {
-    // limpiar la lista
-    mostrarAmigos.innerHTML = '';
-    // recorrer la lista de amigos
-    for (let i = 0; i < listaAmigos.length; i++) {
-        // crear un elemento li
-        let li = document.createElement("li");
-        // agregar el nombre del amigo a la lista
-        li.appendChild(document.createTextNode(listaAmigos[i]));
-        // agregar el elemento li a la lista
-        mostrarAmigos.appendChild(li);
-    }
-    
 }
 
-agregarAmigo();
