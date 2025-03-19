@@ -28,3 +28,13 @@ function mostrarLista() {
     });
 }
 
+function sortearAmigo(){
+    //validar que haya amigos disponibles
+    if (amigos.length === 0) {
+        alert("No hay amigos para realizar el sorteo.");
+    } else {
+        //sortear amigo
+        let amigoSorteado = amigos[Math.floor(Math.random() * amigos.length)];
+        alert("El amigo sorteado es: " + amigoSorteado);
+    }
+}
