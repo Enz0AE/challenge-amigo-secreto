@@ -35,6 +35,7 @@ function sortearAmigo(){
     } else {
         //sortear amigo
         let amigoSorteado = amigos[Math.floor(Math.random() * amigos.length)];
-        alert("El amigo sorteado es: " + amigoSorteado);
+        //Mostrar resultado en pantalla
+        document.getElementById("resultado").innerHTML = `🎉 ¡El amigo secreto es: ${amigoSorteado}! 🎉`;
     }
 }
